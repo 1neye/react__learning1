@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {actionTypeUpdateValueCreater, actionTypeAdPostCreator} from '../../reducers/profileReducer'
 import Main from './Main'
 import {connect} from "react-redux"

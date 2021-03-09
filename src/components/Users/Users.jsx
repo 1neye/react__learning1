@@ -3,8 +3,6 @@ import s from './Users.module.css';
 
 let Users = (props) => {
 
-    console.log('lol')
-
     let pagesCount = props.totaUsersCount / props.pageSize;
 
         let pages = []
