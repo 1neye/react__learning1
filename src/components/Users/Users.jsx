@@ -1,26 +1,33 @@
 import React from 'react'
-import * as axios from 'axios';
+import s from './Users.module.css';
 
-class Users extends React.Component {
+let Users = (props) => {
 
-    componentDidMount() {
-        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
-            this.props.setUsers(response.data.items)
-        });
-    }
+    console.log('lol')
 
-    render() {
-        return <div>
-            {
-                this.props.users.map((m) => <div key={m.id}>
-                    <span>
-                        <div>{m.name}</div>
-                        <div>{"m.location"}</div>
-                        <button>Follow</button>
-                    </span>
-                </div>)
-            }
+    let pagesCount = props.totaUsersCount / props.pageSize;
+
+        let pages = []
+        for (let i = 1; i < pagesCount; i++) {
+            pages.push(i);
+        }
+
+    return <div>
+        <div>
+            {pages.map((p) => {
+                return <span className={props.currentPage === p && s.active} onClick={(e) => { props.onPageChanged(p) }}>{p}</span>
+            })}
         </div>
-    }
+        {
+            props.users.map((m) => <div key={m.id}>
+                <span>
+                    <div>{m.name}</div>
+                    <div>{"m.location"}</div>
+                    <button>Follow</button>
+                </span>
+            </div>)
+        }
+    </div>
+
 }
 export default Users;

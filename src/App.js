@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Header from './components/Header/Header';
+import Sidebar from './components/Sidebar/Sidebar';
+import Dialogs from './components/Dialogs/Dialogs';
+import {Route } from "react-router-dom";
+import MainContainer from './components/Main/MainContainer';
+import UsersContainer from './components/Users/UsersContainer'
 
-function App() {
+const App = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className='app-wrapper'>
+        <Header />
+        <div className='flex-row'>
+          <Sidebar />
+          <Route path='/Main' render={ () => <MainContainer />} />
+          <Route path='/Dialogs' render={ () => <Dialogs />} />
+          <Route path='/Users' render={ () => <UsersContainer />} />
+        </div>
+      </div>
   );
 }
 

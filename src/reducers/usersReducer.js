@@ -1,11 +1,11 @@
 const SET_USERS = 'SET_USERS';
+const SET_USER_CURRENTPAGE = 'SET_USER_CURRENTPAGE';
 
 let initState = {
-    users: [
-        //     {id: 1, status: 'Vasya Pupkin', location: 'Kiev', follow: false},
-        // {id: 2, status: 'Ksenia Hrekova', location: 'Dnepr', follow: false},
-        //     {id: 3, status: 'Andrew Makkonahi', location: 'Minsk', follow: false},
-    ],
+    users: [],
+    pageSize: 5,
+    totaUsersCount: 101,
+    currentPage: 1,
 }
 
 
@@ -13,7 +13,10 @@ let initState = {
 const usersReducer = (state = initState, action) => {
     switch (action.type) {
         case SET_USERS: {
-            return { ...state, users: [...state.users, ...action.users] }
+            return  { ...state, users: action.users }
+        }
+        case SET_USER_CURRENTPAGE: {
+            return  { ...state, currentPage: action.currentPage }
         }
         default:
             return state;
@@ -21,6 +24,7 @@ const usersReducer = (state = initState, action) => {
 }
 
 export const setUsersAC = (users) => ({ type: 'SET_USERS', users })
+export const setUserCurrentPageAC = (currentPage) => ({type: 'SET_USER_CURRENTPAGE', currentPage})
 
 
 export default usersReducer;

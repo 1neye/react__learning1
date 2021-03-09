@@ -1,17 +1,48 @@
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+import store from './redux/reduxStore';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { BrowserRouter} from "react-router-dom";
+import {Provider} from 'react-redux'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+
+// let renderTree = (state) => {
+//     ReactDOM.render(   
+//         <BrowserRouter>
+//         <Provider>
+//             <App state={state.profilePage} dispatch={store.dispatch.bind(store)} />,
+//         </Provider>
+//         </BrowserRouter>,
+//         document.getElementById('root')
+//     );
+// }
+
+ReactDOM.render(   
+    <BrowserRouter>
+    <Provider store={store}>
+        <App />
+    </Provider>
+    </BrowserRouter>,  document.getElementById('root'))
+
+
+// ...initState, users: initState.users.map( u => {
+//     if (u.id === u.id){
+//         console.log({...u, folow: true})
+//     }
+// })
+
+
+
+// store.subscribe( () => {
+//     let state = store.getState()
+//     renderTree(state)
+// });
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals();
