@@ -3,20 +3,6 @@ import {actionTypeUpdateValueCreater, actionTypeAdPostCreator} from '../../reduc
 import Main from './Main'
 import {connect} from "react-redux"
 
-
-// const MainContainer = (props) => {
-//     let onPostChangeAction = (text) => {
-//         props.dispatch(actionTypeUpdateValueCreater(text))
-//     }
-
-//     let AdPostAction = (text) => {
-//         props.dispatch(actionTypeAdPostCreator(text));
-//     }
-//     return (
-//         <Main state={props.state} updateValue={onPostChangeAction} adPost={AdPostAction}/>
-//     );
-// }
-
 const mapStateProps = (state) => {
     return {
         postMsg: state.profilePage.msg,

@@ -3,7 +3,7 @@ import React from 'react';
 const Dialogs = () => {
     return (
         <div>
-            Dialogs
+            Dialogs is here
         </div>
     )
 }
