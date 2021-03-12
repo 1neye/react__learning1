@@ -1,5 +1,6 @@
 import React from 'react'
 import s from './Users.module.css';
+import {NavLink} from "react-router-dom";
 
 let Users = (props) => {
 
@@ -19,7 +20,9 @@ let Users = (props) => {
         {
             props.users.map((m) => <div key={m.id}>
                 <span>
+                    <NavLink to={'/Main/' + m.id}>
                     <div>{m.name}</div>
+                    </NavLink>
                     <div>{"m.location"}</div>
                     <button>Follow</button>
                 </span>
