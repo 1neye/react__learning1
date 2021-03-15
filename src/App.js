@@ -6,6 +6,7 @@ import Dialogs from './components/Dialogs/Dialogs';
 import {Route } from "react-router-dom";
 import MainContainer from './components/Main/MainContainer';
 import UsersContainer from './components/Users/UsersContainer'
+import LearnJs from "./components/LearnJs/LearnJs";
 
 const App = (props) => {
   return (
@@ -16,6 +17,7 @@ const App = (props) => {
           <Route path='/Main' render={ () => <MainContainer />} />
           <Route path='/Dialogs' render={ () => <Dialogs />} />
           <Route path='/Users' render={ () => <UsersContainer />} />
+          <Route path='/LearnJS' render={ () => <LearnJs />} />
         </div>
       </div>
   );

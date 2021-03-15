@@ -8,6 +8,7 @@ const Sidebar = () => {
             <NavLink to='/Main'>Главная</NavLink>
             <NavLink to='/Dialogs'>Диалоги</NavLink>
             <NavLink to='/Users'>Пользователи</NavLink>
+            <NavLink to='/LearnJS'>Learn</NavLink>
 
         </div>
     )
