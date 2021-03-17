@@ -26,11 +26,19 @@ let LearnJs = () => {
         }
         alert(a)
     }
+    let whileFunc = () => {
+        let i = 0;
+        while(i < 5) {
+            i++
+            alert(i)
+        }
+    }
     return (
         <div>
             <span onClick={() =>alert(`Privet ${name}`)}> Обратные кавычки ``</span>
             <div onClick={() => promtFunction()}>Тринарное выражение</div>
             <div onClick={() => ifTask()}> if else task</div>
+            <div onClick={() => whileFunc()}>While loop</div>
         </div>
     )
 }
