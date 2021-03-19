@@ -52,6 +52,40 @@ let LearnJs = () => {
         }
 
     }
+    let numPlusFunc = (num) => {
+        num = prompt('Num?')
+        let count = 1;
+        let result = 0;
+        while(num >= count) {
+            result += count
+            count ++
+        }
+        alert(result)
+    }
+
+    let shortWordsFunc = () => {
+        let words = 'loll kekkghj qweqweghj'
+        let s = words.split(' ')
+        let a = Infinity
+        for (let i = 0; i < s.length; i++) {
+            a = Math.min(s[i], a)
+            console.log(a)
+        }
+    }
+
+    let reverseWordsFunc = () => {
+        let word = 'Anime';
+        let arr = []
+        let result = '';
+        for (let i = 0; i < word.length; i++) {
+            arr.push(word[i])
+        }
+        while (result.length < word.length) {
+            result += arr.pop();
+        }
+        console.log(result)
+
+    }
     return (
         <div>
             <span onClick={() => alert(`Privet ${name}`)}> Обратные кавычки ``</span>
@@ -60,6 +94,9 @@ let LearnJs = () => {
             <div onClick={() => whileFunc()}>While loop</div>
             <div onClick={() => changeNumFunc()}>Change number</div>
             <div onClick={() => equalNumbersFunc()}>Find same numbers in one array</div>
+            <div onClick={() => numPlusFunc()}>Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.</div>
+            <div onClick={() => shortWordsFunc()}>Shortest words</div>
+            <div onClick={() => reverseWordsFunc()}>Reverse words</div>
         </div>
     )
 }
